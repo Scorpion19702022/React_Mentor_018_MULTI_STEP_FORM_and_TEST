@@ -6,6 +6,20 @@
 	padding: 0;
 }
 
+:root {
+	--color-dark01: #ffffff;
+	--color-dark02: #d5dbdb;
+	--color-dark03: #abb8b8;
+	--color-dark04: #829595;
+	--color-dark05: #587272;
+	--color-dark06: #2f4f4f;
+	--color-dark07: #253f3f;
+	--color-dark08: #1c2f2f;
+	--color-dark09: #121f1f;
+	--color-dark10: #090f0f;
+	--color-dark11: #000000;
+}
+
 .wrapper {
 	width: 100%;
 	height: 100vh;
