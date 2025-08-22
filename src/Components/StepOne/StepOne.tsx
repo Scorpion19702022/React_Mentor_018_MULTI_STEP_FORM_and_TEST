@@ -1,6 +1,6 @@
 import type { StepOneTypes } from './Interfaces/StepOneTypes'
 
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { useForm, type SubmitHandler } from 'react-hook-form'
 import styles from './StepOne.module.css'
 
 // interface initialProps {
@@ -20,7 +20,7 @@ const StepOne = () => {
 		reset()
 	}
 
-	const validationRorm = {
+	const validationForm = {
 		firstName: {
 			required: 'błąd',
 			minLength: {
@@ -42,13 +42,13 @@ const StepOne = () => {
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<div>
 					<label>podaj imię:</label>
-					<input type='text' {...register('firstName')} />
-					{errors.firstName && <span>{errors.firstName}</span>}
+					<input type='text' {...register('firstName', validationForm.firstName)} />
+					{errors.firstName?.message && <span>{errors.firstName.message}</span>}
 				</div>
 				<div>
 					<label>podaj azwisko</label>
-					<input type='text' {...register('lastName')} />
-					{errors.lastName && <span>{errors.lastName}</span>}
+					<input type='text' {...register('lastName', validationForm.lastName)} />
+					{errors.lastName?.message && <span>{errors.lastName.message}</span>}
 				</div>
 				<button>przejdź dalej</button>
 			</form>
