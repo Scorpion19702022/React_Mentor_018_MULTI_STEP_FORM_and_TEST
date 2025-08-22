@@ -31,3 +31,12 @@
 	align-items: center;
 	justify-content: space-between;
 }
+
+.box_inputs {
+	width: 100%;
+	height: 30%;
+	padding-bottom: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
