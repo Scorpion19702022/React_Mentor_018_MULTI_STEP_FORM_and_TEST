@@ -39,18 +39,22 @@ const StepOne = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<form onSubmit={handleSubmit(onSubmit)}>
-				<div>
-					<label>podaj imię:</label>
-					<input type='text' {...register('firstName', validationForm.firstName)} />
-					{errors.firstName?.message && <span>{errors.firstName.message}</span>}
+			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+				<div className={styles.box_inputs}>
+					<label className={styles.label}>podaj imię:</label>
+					<input className={styles.input} type='text' {...register('firstName', validationForm.firstName)} />
+					{errors.firstName?.message && <span className={styles.error}>{errors.firstName.message}</span>}
 				</div>
-				<div>
-					<label>podaj azwisko</label>
-					<input type='text' {...register('lastName', validationForm.lastName)} />
-					{errors.lastName?.message && <span>{errors.lastName.message}</span>}
+				<div className={styles.box_inputs}>
+					<label className={styles.label}>podaj azwisko</label>
+					<input className={styles.input} type='text' {...register('lastName', validationForm.lastName)} />
+					{errors.lastName?.message && <span className={styles.error}>{errors.lastName.message}</span>}
 				</div>
-				<button type='submit'>przejdź dalej</button>
+				<div className={styles.box_btns}>
+					<button className={styles.btn} type='submit'>
+						przejdź dalej
+					</button>
+				</div>
 			</form>
 		</section>
 	)
