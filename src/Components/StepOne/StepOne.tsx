@@ -22,14 +22,14 @@ const StepOne = () => {
 
 	const validationForm = {
 		firstName: {
-			required: 'błąd',
+			required: 'musisz wypełnić pole',
 			minLength: {
 				value: 3,
 				message: 'pole powinno posiadać 3 znaki',
 			},
 		},
 		lastName: {
-			required: 'błąd',
+			required: 'musisz wypełnić pole',
 			minLength: {
 				value: 3,
 				message: 'pole powinno posiadać 3 znaki',
@@ -50,7 +50,7 @@ const StepOne = () => {
 					<input type='text' {...register('lastName', validationForm.lastName)} />
 					{errors.lastName?.message && <span>{errors.lastName.message}</span>}
 				</div>
-				<button>przejdź dalej</button>
+				<button type='submit'>przejdź dalej</button>
 			</form>
 		</section>
 	)
