@@ -3,10 +3,6 @@ import type { StepOneTypes } from './Interfaces/StepOneTypes'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import styles from './StepOne.module.css'
 
-// interface initialProps {
-// 	nextStep: () => void
-// }
-
 const StepOne = () => {
 	const {
 		register,
