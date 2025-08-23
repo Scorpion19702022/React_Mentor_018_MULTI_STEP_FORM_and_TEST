@@ -25,10 +25,6 @@ const StepTwo = () => {
 		},
 		gender: {
 			required: 'musisz wypełnić pole',
-			minLength: {
-				value: 3,
-				message: 'pole powinno posiadać 3 znaki',
-			},
 		},
 	}
 
@@ -42,7 +38,7 @@ const StepTwo = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<h2 className={styles.heading}>{`krok pierwszy`.toLocaleUpperCase()}</h2>
+			<h2 className={styles.heading}>{`krok drugi`.toLocaleUpperCase()}</h2>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj wiek:</label>
@@ -52,6 +48,7 @@ const StepTwo = () => {
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj płeć:</label>
 					<select {...register('gender', validationForm.gender)}>{optionSelect}</select>
+					{errors.gender?.message === 'wybierz płeć' && <span className={styles.error}>{errors.gender.message}</span>}
 				</div>
 				<div className={styles.box_btns}>
 					<button className={styles.btn} type='submit'>
