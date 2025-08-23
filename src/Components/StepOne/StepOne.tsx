@@ -39,7 +39,7 @@ const StepOne = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<h2>{`krok pierwszy`.toLocaleUpperCase()}</h2>
+			<h2 className={styles.heading}>{`krok pierwszy`.toLocaleUpperCase()}</h2>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj imię:</label>
@@ -47,7 +47,7 @@ const StepOne = () => {
 					{errors.firstName?.message && <span className={styles.error}>{errors.firstName.message}</span>}
 				</div>
 				<div className={styles.box_inputs}>
-					<label className={styles.label}>podaj azwisko</label>
+					<label className={styles.label}>podaj azwisko:</label>
 					<input className={styles.input} type='text' {...register('lastName', validationForm.lastName)} />
 					{errors.lastName?.message && <span className={styles.error}>{errors.lastName.message}</span>}
 				</div>
