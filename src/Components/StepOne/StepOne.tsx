@@ -12,12 +12,12 @@ const StepOne = () => {
 		register,
 		handleSubmit,
 		formState: { errors },
-		reset,
+		// reset,
 	} = useForm<StepOneTypes>()
 
 	const onSubmit: SubmitHandler<StepOneTypes> = data => {
 		console.log(data)
-		reset()
+		// reset()
 	}
 
 	const validationForm = {
