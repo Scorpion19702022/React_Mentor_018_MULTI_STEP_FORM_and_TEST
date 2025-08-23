@@ -18,6 +18,10 @@
 	width: 30%;
 	height: 600px;
 	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 	background-color: var(--color-dark08);
 	border: 0.04em solid var(--color-dark05);
 	box-shadow: 0.4em 0.4em 0.8em var(--color-dark10);
@@ -25,7 +29,7 @@
 
 .form {
 	width: 100%;
-	height: 100%;
+	height: 85%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -39,4 +43,10 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
+}
+
+.label {
+	width: 100%;
+	color: var(--color-dark04);
 }

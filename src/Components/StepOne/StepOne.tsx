@@ -39,6 +39,7 @@ const StepOne = () => {
 
 	return (
 		<section className={styles.wrapper}>
+			<h2>{`krok pierwszy`.toLocaleUpperCase()}</h2>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj imię:</label>
