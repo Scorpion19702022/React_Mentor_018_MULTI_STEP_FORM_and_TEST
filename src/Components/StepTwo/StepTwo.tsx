@@ -32,7 +32,7 @@ const StepTwo = () => {
 			},
 		},
 		gender: {
-			validate: (value: string) => value !== 'wybierz płeć' || 'musisz wybrać płeć',
+			validate: (value: string) => value === 'wybierz płeć' && 'musisz wybrać płeć',
 		},
 	}
 
