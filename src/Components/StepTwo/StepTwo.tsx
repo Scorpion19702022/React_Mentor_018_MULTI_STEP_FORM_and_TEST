@@ -3,6 +3,14 @@ import type { StepTwoTypes } from './Interfaces/StepTwoTypes'
 import styles from './StepTwo.module.css'
 
 const StepTwo = () => {
+	const genderKind = ['wybierz płeć', 'kobieta', 'mężczyzna']
+
+	const optionSelect = genderKind.map((item, id) => (
+		<option key={id} value={item}>
+			{item}
+		</option>
+	))
+
 	const {
 		register,
 		handleSubmit,
@@ -18,23 +26,15 @@ const StepTwo = () => {
 	const validationForm = {
 		age: {
 			required: 'musisz wypełnić pole',
-			minLength: {
-				value: 3,
-				message: 'pole powinno posiadać 3 znaki',
+			minAge: {
+				age: register,
+				message: 'musisz być pełnoletni',
 			},
 		},
 		gender: {
 			required: 'musisz wypełnić pole',
 		},
 	}
-
-	const genderKind = ['wybierz płeć', 'kobieta', 'mężczyzna']
-
-	const optionSelect = genderKind.map((item, id) => (
-		<option key={id} value={item}>
-			{item}
-		</option>
-	))
 
 	return (
 		<section className={styles.wrapper}>
