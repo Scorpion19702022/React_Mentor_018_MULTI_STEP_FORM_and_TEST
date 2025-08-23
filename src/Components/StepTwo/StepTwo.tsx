@@ -26,13 +26,13 @@ const StepTwo = () => {
 	const validationForm = {
 		age: {
 			required: 'musisz wypełnić pole',
-			minAge: {
-				age: register,
+			min: {
+				value: 18,
 				message: 'musisz być pełnoletni',
 			},
 		},
 		gender: {
-			required: 'musisz wypełnić pole',
+			validate: (value: string) => value !== 'wybierz płeć' || 'musisz wybrać płeć',
 		},
 	}
 
@@ -48,7 +48,7 @@ const StepTwo = () => {
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj płeć:</label>
 					<select {...register('gender', validationForm.gender)}>{optionSelect}</select>
-					{errors.gender?.message === 'wybierz płeć' && <span className={styles.error}>{errors.gender.message}</span>}
+					{errors.gender?.message && <span className={styles.error}>{errors.gender.message}</span>}
 				</div>
 				<div className={styles.box_btns}>
 					<button className={styles.btn} type='submit'>
