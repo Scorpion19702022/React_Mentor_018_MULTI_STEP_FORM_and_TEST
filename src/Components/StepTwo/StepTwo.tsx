@@ -6,7 +6,7 @@ const StepTwo = () => {
 	const genderKind = ['wybierz płeć', 'kobieta', 'mężczyzna']
 
 	const optionSelect = genderKind.map((item, id) => (
-		<option key={id} value={item}>
+		<option key={id} value={item} className={styles.option}>
 			{item}
 		</option>
 	))
