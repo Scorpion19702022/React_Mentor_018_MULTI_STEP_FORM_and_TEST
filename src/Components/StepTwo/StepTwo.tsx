@@ -53,6 +53,7 @@ const StepTwo = () => {
 					{errors.gender?.message && <span className={styles.error}>{errors.gender.message}</span>}
 				</div>
 				<div className={styles.box_btns}>
+					<button className={styles.btn}>cofnij krok</button>
 					<button className={styles.btn} type='submit'>
 						przejdź dalej
 					</button>
