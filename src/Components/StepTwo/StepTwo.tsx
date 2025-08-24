@@ -43,14 +43,18 @@ const StepTwo = () => {
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj wiek:</label>
 					<input className={styles.input} type='number' {...register('age', validationForm.age)} />
-					{errors.age?.message && <span className={styles.error}>{errors.age.message}</span>}
+					<div className={styles.box_error}>
+						{errors.age?.message && <span className={styles.error}>{errors.age.message}</span>}
+					</div>
 				</div>
 				<div className={styles.box_select}>
 					<label className={styles.label}>podaj płeć:</label>
 					<select className={styles.select} {...register('gender', validationForm.gender)}>
 						{optionSelect}
 					</select>
-					{errors.gender?.message && <span className={styles.error}>{errors.gender.message}</span>}
+					<div className={styles.box_error}>
+						{errors.gender?.message && <span className={styles.error}>{errors.gender.message}</span>}
+					</div>
 				</div>
 				<div className={styles.box_btns}>
 					<button className={styles.btn}>cofnij krok</button>
