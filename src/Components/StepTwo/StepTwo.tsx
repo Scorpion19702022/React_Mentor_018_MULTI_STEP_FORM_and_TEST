@@ -45,7 +45,7 @@ const StepTwo = () => {
 					<input className={styles.input} type='number' {...register('age', validationForm.age)} />
 					{errors.age?.message && <span className={styles.error}>{errors.age.message}</span>}
 				</div>
-				<div className={styles.box_inputs}>
+				<div className={styles.box_select}>
 					<label className={styles.label}>podaj płeć:</label>
 					<select className={styles.select} {...register('gender', validationForm.gender)}>
 						{optionSelect}
