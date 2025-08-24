@@ -40,12 +40,16 @@ const StepOne = () => {
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj imię:</label>
 					<input className={styles.input} type='text' {...register('firstName', validationForm.firstName)} />
-					{errors.firstName?.message && <span className={styles.error}>{errors.firstName.message}</span>}
+					<div className={styles.box_error}>
+						{errors.firstName?.message && <span className={styles.error}>{errors.firstName.message}</span>}
+					</div>
 				</div>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj azwisko:</label>
 					<input className={styles.input} type='text' {...register('lastName', validationForm.lastName)} />
-					{errors.lastName?.message && <span className={styles.error}>{errors.lastName.message}</span>}
+					<div className={styles.box_error}>
+						{errors.lastName?.message && <span className={styles.error}>{errors.lastName.message}</span>}
+					</div>
 				</div>
 				<div className={styles.box_btns}>
 					<button className={styles.btn} type='submit'>

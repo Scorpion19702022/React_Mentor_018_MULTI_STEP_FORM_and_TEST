@@ -73,10 +73,13 @@
 	outline: none;
 }
 
-.error {
+.box_error {
 	width: 100%;
 	height: 16px;
 	padding-top: 0.4em;
+}
+
+.error {
 	color: var(--color-error);
 }
 
