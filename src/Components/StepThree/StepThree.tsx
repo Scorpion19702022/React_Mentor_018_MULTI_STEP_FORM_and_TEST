@@ -18,20 +18,20 @@ const StepThree = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<h2 className={styles.heading}>{`krok pierwszy`.toLocaleUpperCase()}</h2>
+			<h2 className={styles.heading}>{`krok trzeci`.toLocaleUpperCase()}</h2>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
-					<label className={styles.label}>podaj imię:</label>
-					<input className={styles.input} type='text' {...register('firstName', validationForm.firstName)} />
+					<label className={styles.label}>podaj numer telefonu:</label>
+					<input className={styles.input} type='number' {...register('phone')} />
 					<div className={styles.box_error}>
-						{errors.firstName?.message && <span className={styles.error}>{errors.firstName.message}</span>}
+						{/* {errors.firstName?.message && <span className={styles.error}>{errors.firstName.message}</span>} */}
 					</div>
 				</div>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj azwisko:</label>
-					<input className={styles.input} type='text' {...register('lastName', validationForm.lastName)} />
+					<input className={styles.input} type='text' {...register('city')} />
 					<div className={styles.box_error}>
-						{errors.lastName?.message && <span className={styles.error}>{errors.lastName.message}</span>}
+						{/* {errors.lastName?.message && <span className={styles.error}>{errors.lastName.message}</span>} */}
 					</div>
 				</div>
 				<div className={styles.box_btns}>
