@@ -38,3 +38,12 @@
 	padding-bottom: 0.6em;
 	border-bottom: 0.04em dotted var(--color-dark05);
 }
+
+.box_list {
+	width: 70%;
+	height: 70%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
