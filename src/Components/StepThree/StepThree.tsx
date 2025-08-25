@@ -16,6 +16,19 @@ const StepThree = () => {
 		// reset()
 	}
 
+	const validationForm = {
+		phone: {
+			required: 'musisz wypełnić pole',
+			minLength: {
+				value: 9,
+				message: 'mumer powinien być conajmniej 9-cio cyfrowy',
+			},
+		},
+		lastName: {
+			required: 'musisz wypełnić pole',
+		},
+	}
+
 	return (
 		<section className={styles.wrapper}>
 			<h2 className={styles.heading}>{`krok trzeci`.toLocaleUpperCase()}</h2>
