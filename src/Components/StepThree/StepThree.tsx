@@ -49,8 +49,9 @@ const StepThree = () => {
 				</div>
 				<div className={styles.box_btns}>
 					<button className={styles.btn} type='submit'>
-						przejdź dalej
+						cofnij krok
 					</button>
+					<button className={styles.btn}>zobacz wynik</button>
 				</div>
 			</form>
 		</section>
