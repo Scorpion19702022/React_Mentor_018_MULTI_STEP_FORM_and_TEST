@@ -19,7 +19,22 @@
 	width: 70%;
 	height: 700px;
 	left: 50%;
+	padding: 2em;
 	transform: translateX(-50%);
-	background-color: var(--color-dark09);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	background-color: var(--color-dark10);
 	border: 0.04em solid var(--color-dark05);
+	box-shadow: 0.8em 0.8em 1em var(--color-dark10);
+}
+
+.heading {
+	width: 100%;
+	text-align: center;
+	color: var(--color-dark03);
+	font-weight: 200;
+	padding-bottom: 0.6em;
+	border-bottom: 0.04em dotted var(--color-dark05);
 }
