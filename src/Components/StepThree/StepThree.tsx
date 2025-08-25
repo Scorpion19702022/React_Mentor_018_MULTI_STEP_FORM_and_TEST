@@ -17,14 +17,14 @@ const StepThree = () => {
 	}
 
 	const validationForm = {
-		phone: {
+		phoneNumber: {
 			required: 'musisz wypełnić pole',
 			minLength: {
 				value: 9,
 				message: 'mumer powinien być conajmniej 9-cio cyfrowy',
 			},
 		},
-		lastName: {
+		cityName: {
 			required: 'musisz wypełnić pole',
 		},
 	}
@@ -35,16 +35,16 @@ const StepThree = () => {
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj numer telefonu:</label>
-					<input className={styles.input} type='number' {...register('phone')} />
+					<input className={styles.input} type='number' {...register('phone', validationForm.phoneNumber)} />
 					<div className={styles.box_error}>
-						{/* {errors.firstName?.message && <span className={styles.error}>{errors.firstName.message}</span>} */}
+						{errors.phone?.message && <span className={styles.error}>{errors.phone.message}</span>}
 					</div>
 				</div>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj azwisko:</label>
-					<input className={styles.input} type='text' {...register('city')} />
+					<input className={styles.input} type='text' {...register('city', validationForm.cityName)} />
 					<div className={styles.box_error}>
-						{/* {errors.lastName?.message && <span className={styles.error}>{errors.lastName.message}</span>} */}
+						{errors.city?.message && <span className={styles.error}>{errors.city.message}</span>}
 					</div>
 				</div>
 				<div className={styles.box_btns}>
