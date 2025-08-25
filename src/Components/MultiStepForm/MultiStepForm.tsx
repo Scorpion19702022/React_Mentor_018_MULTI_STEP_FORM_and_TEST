@@ -1,4 +1,5 @@
 import StepOne from '../StepOne/StepOne'
+import StepResult from '../StepResult/StepResult'
 import StepThree from '../StepThree/StepThree'
 import StepTwo from '../StepTwo/StepTwo'
 import styles from './MultiStepForm.module.css'
@@ -9,6 +10,7 @@ const MultiStepForm = () => {
 			<StepOne />
 			<StepTwo />
 			<StepThree />
+			<StepResult />
 		</main>
 	)
 }
