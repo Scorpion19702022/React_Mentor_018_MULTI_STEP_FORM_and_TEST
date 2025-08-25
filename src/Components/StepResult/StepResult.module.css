@@ -16,7 +16,7 @@
 
 .wrapper {
 	position: absolute;
-	width: 70%;
+	width: 50%;
 	height: 700px;
 	left: 50%;
 	padding: 2em;
@@ -40,16 +40,18 @@
 }
 
 .box_list {
-	width: 50%;
+	width: 80%;
 	height: 70%;
+	padding: 2em;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	background-color: var(--color-dark11);
 }
 
 .list {
-	width: 30%;
+	width: 50%;
 	display: flex;
 	justify-content: space-between;
 	font-size: 1.6em;
