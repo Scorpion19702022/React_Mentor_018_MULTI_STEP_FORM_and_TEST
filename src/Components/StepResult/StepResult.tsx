@@ -6,28 +6,28 @@ const StepResult = () => {
 			<h2 className={styles.heading}>{`resultat`.toLocaleUpperCase()}</h2>
 			<div className={styles.box_list}>
 				<span className={styles.list}>
-					{`imię`.toLocaleUpperCase()}
-					<span className={styles.result}>Jacek</span>
+					{`imię:`.toLocaleUpperCase()}
+					<span className={styles.result}> Jacek</span>
 				</span>
 				<span className={styles.list}>
-					{`imię`.toLocaleUpperCase()}
-					<span className={styles.result}>Jacek</span>
+					{`imię:`.toLocaleUpperCase()}
+					<span className={styles.result}> Jacek</span>
 				</span>
 				<span className={styles.list}>
-					{`imię`.toLocaleUpperCase()}
-					<span className={styles.result}>Jacek</span>
+					{`imię:`.toLocaleUpperCase()}
+					<span className={styles.result}> Jacek</span>
 				</span>
 				<span className={styles.list}>
-					{`imię`.toLocaleUpperCase()}
-					<span className={styles.result}>Jacek</span>
+					{`imię:`.toLocaleUpperCase()}
+					<span className={styles.result}> Jacek</span>
 				</span>
 				<span className={styles.list}>
-					{`imię`.toLocaleUpperCase()}
-					<span className={styles.result}>Jacek</span>
+					{`imię:`.toLocaleUpperCase()}
+					<span className={styles.result}> Jacek</span>
 				</span>
 				<span className={styles.list}>
-					{`imię`.toLocaleUpperCase()}
-					<span className={styles.result}>Jacek</span>
+					{`imię:`.toLocaleUpperCase()}
+					<span className={styles.result}> Jacek</span>
 				</span>
 			</div>
 			<div className={styles.box_btns}>
