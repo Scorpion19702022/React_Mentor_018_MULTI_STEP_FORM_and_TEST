@@ -3,10 +3,10 @@ import type { StepTwoTypes } from './Interfaces/StepTwoTypes'
 import styles from './StepTwo.module.css'
 
 interface initialProps {
-	isStep: number
+	isStepTwo: number
 }
 
-const StepTwo: React.FC<initialProps> = ({ isStep }) => {
+const StepTwo: React.FC<initialProps> = ({ isStepTwo }) => {
 	const genderKind = ['wybierz płeć', 'kobieta', 'mężczyzna']
 
 	const optionSelect = genderKind.map((item, id) => (
@@ -41,7 +41,7 @@ const StepTwo: React.FC<initialProps> = ({ isStep }) => {
 	}
 
 	return (
-		<section className={isStep === 2 ? styles.wrapper : styles.wrapper_end}>
+		<section className={isStepTwo === 2 ? styles.wrapper : styles.wrapper_end}>
 			<h2 className={styles.heading}>{`krok drugi`.toLocaleUpperCase()}</h2>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
