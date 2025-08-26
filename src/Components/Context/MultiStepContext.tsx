@@ -1,15 +1,23 @@
-import { createContext } from 'react'
+import { createContext, useState } from 'react'
 
-type initialStateType = {}
+type initialStateType = {
+	test: string
+}
 
 type MultiStepProviderType = { children: React.ReactNode }
 
-const initialState: initialStateType = {}
+const initialState: initialStateType = {
+	test: '',
+}
 
 const MultiStepContext = createContext(initialState)
 
 export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
-	return <MultiStepContext.Provider value={}>{children}</MultiStepContext.Provider>
+	const [test, setTest] = useState<string>('')
+
+	console.log(test)
+
+	return <MultiStepContext.Provider value={{ test }}>{children}</MultiStepContext.Provider>
 }
 
 export default MultiStepContext
