@@ -2,7 +2,11 @@ import { useForm, type SubmitHandler } from 'react-hook-form'
 import type { StepTwoTypes } from './Interfaces/StepTwoTypes'
 import styles from './StepTwo.module.css'
 
-const StepTwo = () => {
+interface initialProps {
+	isStep: number
+}
+
+const StepTwo: React.FC<initialProps> = ({ isStep }) => {
 	const genderKind = ['wybierz płeć', 'kobieta', 'mężczyzna']
 
 	const optionSelect = genderKind.map((item, id) => (
@@ -37,7 +41,7 @@ const StepTwo = () => {
 	}
 
 	return (
-		<section className={styles.wrapper}>
+		<section className={isStep === 2 ? styles.wrapper : styles.wrapper_end}>
 			<h2 className={styles.heading}>{`krok drugi`.toLocaleUpperCase()}</h2>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
