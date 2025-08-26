@@ -40,8 +40,23 @@
 }
 
 .box_btns {
-	width: 100%;
+	width: 80%;
+	height: 15%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.btn {
+	width: 40%;
+	padding: 0.6em;
+	background: none;
+	border: 0.04em solid var(--color-dark03);
+	color: var(--color-dark03);
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+	background-color: var(--color-dark11);
 }
