@@ -38,30 +38,3 @@
 	padding-bottom: 0.6em;
 	border-bottom: 0.04em dotted var(--color-dark05);
 }
-
-.box_list {
-	width: 80%;
-	height: 70%;
-	padding: 2em;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	background-color: var(--color-dark11);
-}
-
-.list {
-	width: 50%;
-	display: flex;
-	justify-content: space-between;
-	font-size: 1.6em;
-	font-weight: 200;
-	padding-bottom: 0.4em;
-	border-bottom: 0.04em dotted var(--color-dark06);
-	color: var(--color-dark04);
-}
-
-.result {
-	color: var(--color-dark03);
-	font-weight: 400;
-}
