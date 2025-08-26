@@ -38,3 +38,10 @@
 	padding-bottom: 0.6em;
 	border-bottom: 0.04em dotted var(--color-dark05);
 }
+
+.box_btns {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}

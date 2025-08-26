@@ -23,6 +23,7 @@
 	align-items: center;
 	justify-content: center;
 	background-color: var(--color-dark09);
+	border: 0.04em solid var(--color-dark06);
 }
 
 .list {
