@@ -2,8 +2,12 @@ import type { StepOneTypes } from './Interfaces/StepOneTypes'
 
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import styles from './StepOne.module.css'
+import { useContext } from 'react'
+import MultiStepContext from '../Context/MultiStepContext'
 
 const StepOne = () => {
+	const { step } = useContext(MultiStepContext)
+
 	const {
 		register,
 		handleSubmit,
@@ -34,7 +38,7 @@ const StepOne = () => {
 	}
 
 	return (
-		<section className={styles.wrapper}>
+		<section className={step === 1 ? styles.wrapper : styles.wrapper_end}>
 			<h2 className={styles.heading}>{`krok pierwszy`.toLocaleUpperCase()}</h2>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>

@@ -27,6 +27,10 @@
 	box-shadow: 0.4em 0.4em 0.8em var(--color-dark10);
 }
 
+.wrapper_end {
+	visibility: hidden;
+}
+
 .heading {
 	width: 100%;
 	text-align: center;
