@@ -25,6 +25,11 @@
 	background-color: var(--color-dark08);
 	border: 0.04em solid var(--color-dark05);
 	box-shadow: 0.4em 0.4em 0.8em var(--color-dark10);
+	visibility: visible;
+}
+
+.wrapper_end {
+	visibility: hidden;
 }
 
 .heading {
