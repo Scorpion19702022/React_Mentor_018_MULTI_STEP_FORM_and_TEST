@@ -25,7 +25,9 @@ const StepTwo: React.FC<initialProps> = ({ isStepTwo, isStepEnd }) => {
 
 	const onSubmit: SubmitHandler<StepTwoTypes> = data => {
 		console.log(data)
-		isStepEnd(data)
+		if (isStepTwo === 2) {
+			isStepEnd(data)
+		}
 		// reset()
 	}
 
