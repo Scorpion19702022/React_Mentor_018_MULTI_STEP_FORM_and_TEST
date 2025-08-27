@@ -5,9 +5,10 @@ import type { StepThreeTypes } from './Interfaces/StepThreeTypes'
 
 interface initialProps {
 	isStepThree: number
+	isStepEnd: (data: StepThreeTypes) => void
 }
 
-const StepThree: React.FC<initialProps> = ({ isStepThree }) => {
+const StepThree: React.FC<initialProps> = ({ isStepThree, isStepEnd }) => {
 	const {
 		register,
 		handleSubmit,
@@ -17,6 +18,7 @@ const StepThree: React.FC<initialProps> = ({ isStepThree }) => {
 
 	const onSubmit: SubmitHandler<StepThreeTypes> = data => {
 		console.log(data)
+		isStepEnd(data)
 		// reset()
 	}
 

@@ -18,7 +18,7 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 	const [step, setStep] = useState<number>(1)
 
 	const handleNextStep = () => {
-		setStep(2)
+		setStep(step + 1)
 	}
 
 	return <MultiStepContext.Provider value={{ step, handleNextStep }}>{children}</MultiStepContext.Provider>
