@@ -12,9 +12,9 @@ const MultiStepForm = () => {
 	return (
 		<main className={styles.wrapper}>
 			<div className={styles.box_heading}>
-				<h2>{`krok pierwszy`.toLocaleUpperCase()}</h2>
-				<h2>{`krok drugi`.toLocaleUpperCase()}</h2>
-				<h2>{`krok trzeci`.toLocaleUpperCase()}</h2>
+				<h2 className={styles.heading_step_one}>{`krok pierwszy`.toLocaleUpperCase()}</h2>
+				<h2 className={styles.heading_step_two}>{`krok drugi`.toLocaleUpperCase()}</h2>
+				<h2 className={styles.heading_step_three}>{`krok trzeci`.toLocaleUpperCase()}</h2>
 			</div>
 			<div className={styles.box_steps}>
 				<StepOne isStepOne={step} />

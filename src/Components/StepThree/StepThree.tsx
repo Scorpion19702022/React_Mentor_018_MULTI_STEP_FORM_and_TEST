@@ -40,7 +40,7 @@ const StepThree = () => {
 					</div>
 				</div>
 				<div className={styles.box_inputs}>
-					<label className={styles.label}>podaj azwisko:</label>
+					<label className={styles.label}>podaj miasto:</label>
 					<input className={styles.input} type='text' {...register('city', validationForm.cityName)} />
 					<div className={styles.box_error}>
 						{errors.city?.message && <span className={styles.error}>{errors.city.message}</span>}
