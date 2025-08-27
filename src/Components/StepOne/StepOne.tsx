@@ -5,9 +5,10 @@ import styles from './StepOne.module.css'
 
 interface initialProps {
 	isStepOne: number
+	isStepEnd: (data: StepOneTypes) => void
 }
 
-const StepOne: React.FC<initialProps> = ({ isStepOne }) => {
+const StepOne: React.FC<initialProps> = ({ isStepOne, isStepEnd }) => {
 	const {
 		register,
 		handleSubmit,
@@ -16,6 +17,7 @@ const StepOne: React.FC<initialProps> = ({ isStepOne }) => {
 	} = useForm<StepOneTypes>()
 
 	const onSubmit: SubmitHandler<StepOneTypes> = data => {
+		isStepEnd(data)
 		console.log(data)
 		// reset()
 	}
