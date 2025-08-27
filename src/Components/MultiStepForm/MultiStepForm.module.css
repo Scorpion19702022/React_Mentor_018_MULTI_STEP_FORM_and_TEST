@@ -15,11 +15,25 @@
 }
 
 .wrapper {
-	position: relative;
 	width: 100%;
 	height: 100vh;
 	padding: 4em;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.box_heading {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.box_steps {
+	width: 100%;
+	height: 560px;
+	display: flex;
 }
