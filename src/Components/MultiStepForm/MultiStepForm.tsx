@@ -25,8 +25,8 @@ const MultiStepForm = () => {
 			<div className={styles.box_steps}>
 				<StepOne isStepOne={step} />
 				<StepTwo isStepTwo={step} />
-				<StepThree />
-				<StepResult />
+				<StepThree isStepThree={step} />
+				<StepResult isStepResult={step} />
 			</div>
 		</main>
 	)
