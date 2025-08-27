@@ -7,7 +7,7 @@ import styles from './MultiStepForm.module.css'
 import MultiStepContext from '../Context/MultiStepContext'
 
 const MultiStepForm = () => {
-	const { step } = useContext(MultiStepContext)
+	const { step, handleNextStep } = useContext(MultiStepContext)
 
 	return (
 		<main className={styles.wrapper}>
@@ -23,7 +23,7 @@ const MultiStepForm = () => {
 				</h2>
 			</div>
 			<div className={styles.box_steps}>
-				<StepOne isStepOne={step} />
+				<StepOne isStepOne={step} isStepEnd={handleNextStep} />
 				<StepTwo isStepTwo={step} />
 				<StepThree isStepThree={step} />
 				<StepResult isStepResult={step} />
