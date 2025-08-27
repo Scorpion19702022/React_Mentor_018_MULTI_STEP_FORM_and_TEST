@@ -3,7 +3,11 @@ import { useForm, type SubmitHandler } from 'react-hook-form'
 import styles from './StepThree.module.css'
 import type { StepThreeTypes } from './Interfaces/StepThreeTypes'
 
-const StepThree = () => {
+interface initialProps {
+	isStepThree: number
+}
+
+const StepThree: React.FC<initialProps> = ({ isStepThree }) => {
 	const {
 		register,
 		handleSubmit,
@@ -30,7 +34,7 @@ const StepThree = () => {
 	}
 
 	return (
-		<section className={styles.wrapper}>
+		<section className={isStepThree === 3 ? styles.wrapper : styles.wrapper_end}>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj numer telefonu:</label>

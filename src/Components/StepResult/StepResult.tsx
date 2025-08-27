@@ -1,9 +1,13 @@
 import StepResultItem from '../StepResultItem/StepResultItem'
 import styles from './StepResult.module.css'
 
-const StepResult = () => {
+interface initialProps {
+	isStepResult: number
+}
+
+const StepResult: React.FC<initialProps> = ({ isStepResult }) => {
 	return (
-		<section className={styles.wrapper}>
+		<section className={isStepResult === 4 ? styles.wrapper : styles.wrapper_end}>
 			<h2 className={styles.heading}>{`resultat`.toLocaleUpperCase()}</h2>
 			<StepResultItem />
 			<div className={styles.box_btns}>

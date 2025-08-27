@@ -28,6 +28,10 @@
 	background-color: var(--color-dark10);
 	border: 0.04em solid var(--color-dark05);
 	box-shadow: 0.8em 0.8em 1em var(--color-dark10);
+	visibility: visible;
+}
+
+.wrapper_end {
 	visibility: hidden;
 }
 
