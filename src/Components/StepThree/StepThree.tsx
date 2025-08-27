@@ -31,7 +31,6 @@ const StepThree = () => {
 
 	return (
 		<section className={styles.wrapper}>
-			<h2 className={styles.heading}>{`krok trzeci`.toLocaleUpperCase()}</h2>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj numer telefonu:</label>

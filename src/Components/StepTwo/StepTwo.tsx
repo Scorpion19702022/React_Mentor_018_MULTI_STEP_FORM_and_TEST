@@ -42,7 +42,6 @@ const StepTwo: React.FC<initialProps> = ({ isStepTwo }) => {
 
 	return (
 		<section className={isStepTwo === 2 ? styles.wrapper : styles.wrapper_end}>
-			<h2 className={styles.heading}>{`krok drugi`.toLocaleUpperCase()}</h2>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj wiek:</label>

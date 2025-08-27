@@ -39,7 +39,6 @@ const StepOne: React.FC<initialProps> = ({ isStepOne }) => {
 
 	return (
 		<section className={isStepOne === 1 ? styles.wrapper : styles.wrapper_end}>
-			<h2 className={styles.heading}>{`krok pierwszy`.toLocaleUpperCase()}</h2>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj imię:</label>
