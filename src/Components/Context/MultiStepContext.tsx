@@ -18,7 +18,7 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 	const [step, setStep] = useState<number>(1)
 
 	const handleNextStep = () => {
-		setStep(prevState => prevState + step)
+		setStep(prevState => prevState + 1)
 	}
 
 	console.log(step)
