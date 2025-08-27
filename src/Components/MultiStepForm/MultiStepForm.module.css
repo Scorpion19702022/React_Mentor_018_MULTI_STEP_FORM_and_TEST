@@ -32,9 +32,9 @@
 	justify-content: space-between;
 }
 
-.heading_step_one,
-.heading_step_two,
-.heading_step_three {
+.heading_step_one_active,
+.heading_step_two_active,
+.heading_step_three_active {
 	width: 30%;
 	text-align: center;
 	color: var(--color-dark02);
@@ -42,9 +42,9 @@
 	font-size: 1.6em;
 }
 
-.heading_step_one:disabled,
-.heading_step_two:disabled,
-.heading_step_three:disabled {
+.heading_step_one,
+.heading_step_two,
+.heading_step_three {
 	width: 30%;
 	text-align: center;
 	color: var(--color-dark06);
