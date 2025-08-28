@@ -5,10 +5,12 @@ import type { StepThreeTypes } from './Interfaces/StepThreeTypes'
 
 interface initialProps {
 	isStepThree: number
-	isStepEndThree: (data: StepThreeTypes) => void
+	isStepEndThree: () => void
+	backStep: () => void
+	addDataStepThree: (phone: number, city: string) => void
 }
 
-const StepThree: React.FC<initialProps> = ({ isStepThree, isStepEndThree }) => {
+const StepThree: React.FC<initialProps> = ({ isStepThree, isStepEndThree, backStep, addDataStepThree }) => {
 	const {
 		register,
 		handleSubmit,
@@ -16,9 +18,9 @@ const StepThree: React.FC<initialProps> = ({ isStepThree, isStepEndThree }) => {
 		// reset,
 	} = useForm<StepThreeTypes>()
 
-	const onSubmit: SubmitHandler<StepThreeTypes> = data => {
-		console.log(data)
-		isStepEndThree(data)
+	const onSubmit: SubmitHandler<StepThreeTypes> = ({ phone, city }) => {
+		isStepEndThree()
+		addDataStepThree(phone, city)
 		// reset()
 	}
 
@@ -53,10 +55,12 @@ const StepThree: React.FC<initialProps> = ({ isStepThree, isStepEndThree }) => {
 					</div>
 				</div>
 				<div className={styles.box_btns}>
-					<button className={styles.btn} type='submit'>
+					<button className={styles.btn} onClick={backStep}>
 						cofnij krok
 					</button>
-					<button className={styles.btn}>zobacz wynik</button>
+					<button className={styles.btn} type='submit'>
+						zobacz wynik
+					</button>
 				</div>
 			</form>
 		</section>

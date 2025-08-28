@@ -7,11 +7,11 @@ import styles from './MultiStepForm.module.css'
 import MultiStepContext from '../Context/MultiStepContext'
 
 const MultiStepForm = () => {
-	const { step, handleNextStep } = useContext(MultiStepContext)
+	const { step, result, handleNextStep, handleBackStep, handleDataStepOne, handleDataStepTwo, handleDataStepThree } =
+		useContext(MultiStepContext)
 
 	return (
 		<main className={styles.wrapper}>
-			<button onClick={handleNextStep}>test</button>
 			<div className={styles.box_heading}>
 				<h2 className={step === 1 ? styles.heading_step_one_active : styles.heading_step_one}>
 					{`krok pierwszy`.toLocaleUpperCase()}
@@ -24,10 +24,20 @@ const MultiStepForm = () => {
 				</h2>
 			</div>
 			<div className={styles.box_steps}>
-				<StepOne isStepOne={step} isStepEndOne={handleNextStep} />
-				<StepTwo isStepTwo={step} isStepEndTwo={handleNextStep} />
-				<StepThree isStepThree={step} isStepEndThree={handleNextStep} />
-				<StepResult isStepResult={step} />
+				<StepOne isStepOne={step} isStepEndOne={handleNextStep} addDataStepOne={handleDataStepOne} />
+				<StepTwo
+					isStepTwo={step}
+					isStepEndTwo={handleNextStep}
+					addDateStepTwo={handleDataStepTwo}
+					backStep={handleBackStep}
+				/>
+				<StepThree
+					isStepThree={step}
+					isStepEndThree={handleNextStep}
+					addDataStepThree={handleDataStepThree}
+					backStep={handleBackStep}
+				/>
+				<StepResult isStepResult={step} result={result} backStep={handleBackStep} />
 			</div>
 		</main>
 	)

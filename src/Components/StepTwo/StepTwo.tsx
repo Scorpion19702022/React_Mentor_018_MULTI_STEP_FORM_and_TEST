@@ -4,10 +4,12 @@ import styles from './StepTwo.module.css'
 
 interface initialProps {
 	isStepTwo: number
-	isStepEndTwo: (data: StepTwoTypes) => void
+	isStepEndTwo: () => void
+	backStep: () => void
+	addDateStepTwo: (age: number, gender: string) => void
 }
 
-const StepTwo: React.FC<initialProps> = ({ isStepTwo, isStepEndTwo }) => {
+const StepTwo: React.FC<initialProps> = ({ isStepTwo, isStepEndTwo, backStep, addDateStepTwo }) => {
 	const genderKind = ['wybierz płeć', 'kobieta', 'mężczyzna']
 
 	const optionSelect = genderKind.map((item, id) => (
@@ -23,9 +25,9 @@ const StepTwo: React.FC<initialProps> = ({ isStepTwo, isStepEndTwo }) => {
 		// reset,
 	} = useForm<StepTwoTypes>()
 
-	const onSubmit: SubmitHandler<StepTwoTypes> = data => {
-		console.log(data)
-		isStepEndTwo(data)
+	const onSubmit: SubmitHandler<StepTwoTypes> = ({ age, gender }) => {
+		isStepEndTwo()
+		addDateStepTwo(age, gender)
 		// reset()
 	}
 
@@ -37,8 +39,11 @@ const StepTwo: React.FC<initialProps> = ({ isStepTwo, isStepEndTwo }) => {
 				message: 'musisz być pełnoletni',
 			},
 		},
+		// gender: {
+		// 	validate: (value: string) => value === 'wybierz płeć' && 'musisz wybrać płeć',
+		// },
 		gender: {
-			validate: (value: string) => value === 'wybierz płeć' && 'musisz wybrać płeć',
+			validate: (value: string) => value !== 'wybierz płeć' || 'musisz wybrać płeć',
 		},
 	}
 
@@ -62,7 +67,9 @@ const StepTwo: React.FC<initialProps> = ({ isStepTwo, isStepEndTwo }) => {
 					</div>
 				</div>
 				<div className={styles.box_btns}>
-					<button className={styles.btn}>cofnij krok</button>
+					<button className={styles.btn} onClick={backStep}>
+						cofnij krok
+					</button>
 					<button className={styles.btn} type='submit'>
 						przejdź dalej
 					</button>
