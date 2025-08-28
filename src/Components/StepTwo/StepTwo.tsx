@@ -4,10 +4,10 @@ import styles from './StepTwo.module.css'
 
 interface initialProps {
 	isStepTwo: number
-	isStepEnd: (data: StepTwoTypes) => void
+	isStepEndTwo: (data: StepTwoTypes) => void
 }
 
-const StepTwo: React.FC<initialProps> = ({ isStepTwo, isStepEnd }) => {
+const StepTwo: React.FC<initialProps> = ({ isStepTwo, isStepEndTwo }) => {
 	const genderKind = ['wybierz płeć', 'kobieta', 'mężczyzna']
 
 	const optionSelect = genderKind.map((item, id) => (
@@ -25,7 +25,7 @@ const StepTwo: React.FC<initialProps> = ({ isStepTwo, isStepEnd }) => {
 
 	const onSubmit: SubmitHandler<StepTwoTypes> = data => {
 		console.log(data)
-		isStepEnd(data)
+		isStepEndTwo(data)
 		// reset()
 	}
 
