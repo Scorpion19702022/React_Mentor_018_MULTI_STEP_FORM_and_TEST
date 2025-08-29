@@ -1,4 +1,4 @@
 export type StepTwoTypes = {
-	age: number
+	age: string
 	gender: string
 }

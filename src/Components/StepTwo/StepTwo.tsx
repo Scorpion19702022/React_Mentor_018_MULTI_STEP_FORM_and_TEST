@@ -6,7 +6,7 @@ interface initialProps {
 	stepTwo: number
 	stepEndTwo: () => void
 	backStep: () => void
-	addDateStepTwo: (age: number, gender: string) => void
+	addDateStepTwo: (age: string, gender: string) => void
 }
 
 const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDateStepTwo }) => {

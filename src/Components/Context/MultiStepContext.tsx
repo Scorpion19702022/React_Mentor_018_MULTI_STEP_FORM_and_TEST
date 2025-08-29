@@ -7,7 +7,7 @@ type initialStateType = {
 	handleNextStep: () => void
 	handleBackStep: () => void
 	handleDataStepOne: (firstName: string, lastName: string) => void
-	handleDataStepTwo: (age: number, gender: string) => void
+	handleDataStepTwo: (age: string, gender: string) => void
 	handleDataStepThree: (phoneNumber: number, city: string) => void
 }
 
@@ -41,7 +41,7 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 		})
 	}
 
-	const handleDataStepTwo = (age: number, gender: string) => {
+	const handleDataStepTwo = (age: string, gender: string) => {
 		setResult({
 			...result,
 			ageResult: age,
@@ -59,6 +59,7 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 
 	const handleBackStep = () => {
 		if (result.firstNameResult !== '' || result.lastNameResult !== '' || result.ageResult !== '') {
+			setStep(prevState => --prevState)
 		}
 	}
 

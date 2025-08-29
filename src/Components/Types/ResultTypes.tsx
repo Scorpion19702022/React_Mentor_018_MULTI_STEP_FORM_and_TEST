@@ -1,7 +1,7 @@
 export type ResultTypes = {
 	firstNameResult?: string
 	lastNameResult?: string
-	ageResult?: number
+	ageResult?: string
 	genderResult?: string
 	phoneResult?: number
 	cityResult?: string
