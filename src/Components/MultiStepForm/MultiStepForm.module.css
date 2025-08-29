@@ -25,7 +25,6 @@
 }
 
 .box_heading {
-	position: relative;
 	width: 100%;
 	height: 50px;
 	display: flex;
@@ -58,4 +57,5 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	background-color: #829595;
 }
