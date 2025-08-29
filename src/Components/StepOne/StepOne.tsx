@@ -4,12 +4,12 @@ import { useForm, type SubmitHandler } from 'react-hook-form'
 import styles from './StepOne.module.css'
 
 interface initialProps {
-	isStepOne: number
-	isStepEndOne: () => void
+	stepOne: number
+	stepEndOne: () => void
 	addDataStepOne: (firstName: string, lastName: string) => void
 }
 
-const StepOne: React.FC<initialProps> = ({ isStepOne, isStepEndOne, addDataStepOne }) => {
+const StepOne: React.FC<initialProps> = ({ stepOne, stepEndOne, addDataStepOne }) => {
 	const {
 		register,
 		handleSubmit,
@@ -18,7 +18,7 @@ const StepOne: React.FC<initialProps> = ({ isStepOne, isStepEndOne, addDataStepO
 	} = useForm<StepOneTypes>()
 
 	const onSubmit: SubmitHandler<StepOneTypes> = ({ firstName, lastName }) => {
-		isStepEndOne()
+		stepEndOne()
 		addDataStepOne(firstName, lastName)
 		// reset()
 	}
@@ -41,7 +41,7 @@ const StepOne: React.FC<initialProps> = ({ isStepOne, isStepEndOne, addDataStepO
 	}
 
 	return (
-		<section className={isStepOne === 1 ? styles.wrapper : styles.wrapper_end}>
+		<section className={stepOne === 1 ? styles.wrapper : styles.wrapper_end}>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj imię:</label>

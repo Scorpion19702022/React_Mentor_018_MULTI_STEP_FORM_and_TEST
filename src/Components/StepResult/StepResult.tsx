@@ -3,14 +3,14 @@ import type { ResultTypes } from '../Types/ResultTypes'
 import styles from './StepResult.module.css'
 
 interface initialProps {
-	isStepResult: number
+	StepResult: number
 	result: ResultTypes
 	backStep: () => void
 }
 
-const StepResult: React.FC<initialProps> = ({ isStepResult, result, backStep }) => {
+const StepResult: React.FC<initialProps> = ({ StepResult, result, backStep }) => {
 	return (
-		<section className={isStepResult === 4 ? styles.wrapper : styles.wrapper_end}>
+		<section className={StepResult === 4 ? styles.wrapper : styles.wrapper_end}>
 			<h2 className={styles.heading}>{`resultat`.toLocaleUpperCase()}</h2>
 			<StepResultItem result={result} />
 			<div className={styles.box_btns}>
