@@ -48,7 +48,7 @@ const StepTwo: React.FC<initialProps> = ({ isStepTwo, isStepEndTwo, backStep, ad
 	}
 
 	return (
-		<section className={isStepTwo === 2 ? styles.wrapper : styles.wrapper_end}>
+		<section className={isStepTwo === 1 ? styles.wrapper : styles.wrapper_end}>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj wiek:</label>
