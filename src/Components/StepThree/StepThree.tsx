@@ -38,7 +38,7 @@ const StepThree: React.FC<initialProps> = ({ stepThree, stepEndThree, backStep, 
 	}
 
 	return (
-		<section className={stepThree === 1 ? styles.wrapper : styles.wrapper_end}>
+		<section className={stepThree === 3 ? styles.wrapper : styles.wrapper_end}>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj numer telefonu:</label>
