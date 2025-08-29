@@ -3,13 +3,13 @@ import type { StepTwoTypes } from './Interfaces/StepTwoTypes'
 import styles from './StepTwo.module.css'
 
 interface initialProps {
-	isStepTwo: number
-	isStepEndTwo: () => void
+	stepTwo: number
+	stepEndTwo: () => void
 	backStep: () => void
 	addDateStepTwo: (age: number, gender: string) => void
 }
 
-const StepTwo: React.FC<initialProps> = ({ isStepTwo, isStepEndTwo, backStep, addDateStepTwo }) => {
+const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDateStepTwo }) => {
 	const genderKind = ['wybierz płeć', 'kobieta', 'mężczyzna']
 
 	const optionSelect = genderKind.map((item, id) => (
@@ -26,7 +26,7 @@ const StepTwo: React.FC<initialProps> = ({ isStepTwo, isStepEndTwo, backStep, ad
 	} = useForm<StepTwoTypes>()
 
 	const onSubmit: SubmitHandler<StepTwoTypes> = ({ age, gender }) => {
-		isStepEndTwo()
+		stepEndTwo()
 		addDateStepTwo(age, gender)
 		// reset()
 	}
@@ -48,7 +48,7 @@ const StepTwo: React.FC<initialProps> = ({ isStepTwo, isStepEndTwo, backStep, ad
 	}
 
 	return (
-		<section className={isStepTwo === 1 ? styles.wrapper : styles.wrapper_end}>
+		<section className={stepTwo === 1 ? styles.wrapper : styles.wrapper_end}>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj wiek:</label>

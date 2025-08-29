@@ -4,13 +4,13 @@ import styles from './StepThree.module.css'
 import type { StepThreeTypes } from './Interfaces/StepThreeTypes'
 
 interface initialProps {
-	isStepThree: number
-	isStepEndThree: () => void
+	stepThree: number
+	stepEndThree: () => void
 	backStep: () => void
 	addDataStepThree: (phone: number, city: string) => void
 }
 
-const StepThree: React.FC<initialProps> = ({ isStepThree, isStepEndThree, backStep, addDataStepThree }) => {
+const StepThree: React.FC<initialProps> = ({ stepThree, stepEndThree, backStep, addDataStepThree }) => {
 	const {
 		register,
 		handleSubmit,
@@ -19,7 +19,7 @@ const StepThree: React.FC<initialProps> = ({ isStepThree, isStepEndThree, backSt
 	} = useForm<StepThreeTypes>()
 
 	const onSubmit: SubmitHandler<StepThreeTypes> = ({ phone, city }) => {
-		isStepEndThree()
+		stepEndThree()
 		addDataStepThree(phone, city)
 		// reset()
 	}
@@ -38,7 +38,7 @@ const StepThree: React.FC<initialProps> = ({ isStepThree, isStepEndThree, backSt
 	}
 
 	return (
-		<section className={isStepThree === 1 ? styles.wrapper : styles.wrapper_end}>
+		<section className={stepThree === 1 ? styles.wrapper : styles.wrapper_end}>
 			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj numer telefonu:</label>
