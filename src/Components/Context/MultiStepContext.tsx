@@ -33,10 +33,6 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 		setStep(prevState => ++prevState)
 	}
 
-	const handleBackStep = () => {
-		setStep(prevState => --prevState)
-	}
-
 	const handleDataStepOne = (firstName: string, lastName: string) => {
 		setResult({
 			...result,
@@ -59,6 +55,11 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 			phoneResult: phoneNumber,
 			cityResult: city,
 		})
+	}
+
+	const handleBackStep = () => {
+		if (result.firstNameResult !== '' || result.lastNameResult !== '' || result.ageResult !== '') {
+		}
 	}
 
 	console.log(step)
