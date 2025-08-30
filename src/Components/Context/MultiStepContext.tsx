@@ -41,6 +41,7 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 	}
 
 	const handleDataStepOne = (firstName: string, lastName: string) => {
+		setCleanAllState(false)
 		setResult({
 			...result,
 			firstNameResult: firstName,
@@ -49,6 +50,7 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 	}
 
 	const handleDataStepTwo = (age: string, gender: string) => {
+		setCleanAllState(false)
 		setResult({
 			...result,
 			ageResult: age,
@@ -57,6 +59,7 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 	}
 
 	const handleDataStepThree = (phoneNumber: string, city: string) => {
+		setCleanAllState(false)
 		setResult({
 			...result,
 			phoneResult: phoneNumber,

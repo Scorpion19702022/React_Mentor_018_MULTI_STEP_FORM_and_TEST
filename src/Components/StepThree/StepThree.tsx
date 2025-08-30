@@ -2,6 +2,7 @@ import { useForm, type SubmitHandler } from 'react-hook-form'
 
 import styles from './StepThree.module.css'
 import type { StepThreeTypes } from './Interfaces/StepThreeTypes'
+import { useEffect } from 'react'
 
 interface initialProps {
 	stepThree: number
@@ -17,6 +18,7 @@ const StepThree: React.FC<initialProps> = ({ stepThree, stepEndThree, backStep, 
 		handleSubmit,
 		formState: { errors },
 		reset,
+		clearErrors,
 	} = useForm<StepThreeTypes>()
 
 	const onSubmit: SubmitHandler<StepThreeTypes> = ({ phone, city }) => {
@@ -26,6 +28,12 @@ const StepThree: React.FC<initialProps> = ({ stepThree, stepEndThree, backStep, 
 			reset()
 		}
 	}
+
+	useEffect(() => {
+		if (stepThree === 3) {
+			clearErrors()
+		}
+	}, [stepThree, clearErrors])
 
 	const validationForm = {
 		phoneNumber: {
