@@ -13,23 +13,23 @@ const StepResultItem: React.FC<initialProps> = ({ result }) => {
 				<span className={styles.result}>{result.firstNameResult}</span>
 			</span>
 			<span className={styles.list}>
-				{`imię:`.toLocaleUpperCase()}
+				{`nazwisko:`.toLocaleUpperCase()}
 				<span className={styles.result}> {result.lastNameResult}</span>
 			</span>
 			<span className={styles.list}>
-				{`imię:`.toLocaleUpperCase()}
+				{`wiek:`.toLocaleUpperCase()}
 				<span className={styles.result}> {result.ageResult}</span>
 			</span>
 			<span className={styles.list}>
-				{`imię:`.toLocaleUpperCase()}
+				{`płeć:`.toLocaleUpperCase()}
 				<span className={styles.result}> {result.genderResult}</span>
 			</span>
 			<span className={styles.list}>
-				{`imię:`.toLocaleUpperCase()}
+				{`numer telefonu:`.toLocaleUpperCase()}
 				<span className={styles.result}> {result.phoneResult}</span>
 			</span>
 			<span className={styles.list}>
-				{`imię:`.toLocaleUpperCase()}
+				{`miasto:`.toLocaleUpperCase()}
 				<span className={styles.result}> {result.cityResult}</span>
 			</span>
 		</div>
