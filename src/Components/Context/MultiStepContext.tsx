@@ -58,9 +58,7 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 	}
 
 	const handleBackStep = () => {
-		if (result.firstNameResult !== '' || result.lastNameResult !== '' || result.ageResult !== '') {
-			setStep(prevState => --prevState)
-		}
+		setStep(prevState => --prevState)
 	}
 
 	console.log(step)
