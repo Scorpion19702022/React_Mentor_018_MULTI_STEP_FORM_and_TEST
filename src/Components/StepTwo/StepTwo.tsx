@@ -70,7 +70,7 @@ const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDat
 					</div>
 				</div>
 				<div className={styles.box_btns}>
-					<button className={styles.btn} onClick={backStep}>
+					<button className={styles.btn} onClick={backStep} type='button'>
 						cofnij krok
 					</button>
 					<button className={styles.btn} type='submit'>

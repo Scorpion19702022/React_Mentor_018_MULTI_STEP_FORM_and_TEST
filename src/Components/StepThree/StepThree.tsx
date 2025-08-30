@@ -58,7 +58,7 @@ const StepThree: React.FC<initialProps> = ({ stepThree, stepEndThree, backStep, 
 					</div>
 				</div>
 				<div className={styles.box_btns}>
-					<button className={styles.btn} onClick={backStep}>
+					<button className={styles.btn} onClick={backStep} type='button'>
 						cofnij krok
 					</button>
 					<button className={styles.btn} type='submit'>
