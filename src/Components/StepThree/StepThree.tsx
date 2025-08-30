@@ -22,7 +22,7 @@ const StepThree: React.FC<initialProps> = ({ stepThree, stepEndThree, backStep, 
 	const onSubmit: SubmitHandler<StepThreeTypes> = ({ phone, city }) => {
 		stepEndThree()
 		addDataStepThree(phone, city)
-		if (isClean) {
+		if (!isClean) {
 			reset()
 		}
 	}
