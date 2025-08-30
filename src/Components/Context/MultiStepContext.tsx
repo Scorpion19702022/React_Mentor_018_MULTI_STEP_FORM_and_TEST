@@ -9,6 +9,7 @@ type initialStateType = {
 	handleDataStepOne: (firstName: string, lastName: string) => void
 	handleDataStepTwo: (age: string, gender: string) => void
 	handleDataStepThree: (phoneNumber: number, city: string) => void
+	handleCleanAll: () => void
 }
 
 type MultiStepProviderType = { children: React.ReactNode }
@@ -21,6 +22,7 @@ const initialState: initialStateType = {
 	handleDataStepOne: () => {},
 	handleDataStepTwo: () => {},
 	handleDataStepThree: () => {},
+	handleCleanAll: () => {},
 }
 
 const MultiStepContext = createContext(initialState)
@@ -61,7 +63,9 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 		setStep(prevState => --prevState)
 	}
 
-	console.log(step)
+	const handleCleanAll = () => {}
+
+	// console.log(step)
 
 	return (
 		<MultiStepContext.Provider
@@ -73,6 +77,7 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 				handleDataStepOne,
 				handleDataStepTwo,
 				handleDataStepThree,
+				handleCleanAll,
 			}}
 		>
 			{children}

@@ -6,9 +6,10 @@ interface initialProps {
 	StepResult: number
 	result: ResultTypes
 	backStep: () => void
+	cleanAll: () => void
 }
 
-const StepResult: React.FC<initialProps> = ({ StepResult, result, backStep }) => {
+const StepResult: React.FC<initialProps> = ({ StepResult, result, backStep, cleanAll }) => {
 	return (
 		<section className={StepResult === 4 ? styles.wrapper : styles.wrapper_end}>
 			<h2 className={styles.heading}>{`resultat`.toLocaleUpperCase()}</h2>
@@ -17,7 +18,9 @@ const StepResult: React.FC<initialProps> = ({ StepResult, result, backStep }) =>
 				<button className={styles.btn} onClick={backStep}>
 					cofnij
 				</button>
-				<button className={styles.btn}>wyczyść</button>
+				<button className={styles.btn} onClick={cleanAll}>
+					wyczyść
+				</button>
 			</div>
 		</section>
 	)

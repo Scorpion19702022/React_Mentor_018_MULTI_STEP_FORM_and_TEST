@@ -12,8 +12,6 @@ const MultiStepForm = () => {
 
 	return (
 		<main className={styles.wrapper}>
-			<button onClick={handleNextStep}>dodaj</button>
-			<button onClick={handleBackStep}>odejmij</button>
 			<div className={styles.box_heading}>
 				<h2 className={step === 1 ? styles.heading_step_one_active : styles.heading_step_one}>
 					{`krok pierwszy`.toLocaleUpperCase()}
