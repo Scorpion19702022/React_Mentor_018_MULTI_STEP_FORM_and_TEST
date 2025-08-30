@@ -65,6 +65,7 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 	}
 
 	const handleBackStep = () => {
+		setCleanAllState(false)
 		setStep(prevState => --prevState)
 	}
 
