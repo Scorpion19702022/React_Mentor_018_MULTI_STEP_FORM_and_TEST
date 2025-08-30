@@ -7,9 +7,10 @@ interface initialProps {
 	stepEndTwo: () => void
 	backStep: () => void
 	addDateStepTwo: (age: string, gender: string) => void
+	isClean: boolean
 }
 
-const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDateStepTwo }) => {
+const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDateStepTwo, isClean }) => {
 	const genderKind = ['wybierz płeć', 'kobieta', 'mężczyzna']
 
 	const optionSelect = genderKind.map((item, id) => (
@@ -22,13 +23,15 @@ const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDat
 		register,
 		handleSubmit,
 		formState: { errors },
-		// reset,
+		reset,
 	} = useForm<StepTwoTypes>()
 
 	const onSubmit: SubmitHandler<StepTwoTypes> = ({ age, gender }) => {
 		stepEndTwo()
 		addDateStepTwo(age, gender)
-		// reset()
+		if (isClean) {
+			reset()
+		}
 	}
 
 	const validationForm = {

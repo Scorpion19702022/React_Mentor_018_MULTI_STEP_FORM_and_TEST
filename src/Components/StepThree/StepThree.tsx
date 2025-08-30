@@ -8,20 +8,23 @@ interface initialProps {
 	stepEndThree: () => void
 	backStep: () => void
 	addDataStepThree: (phone: number, city: string) => void
+	isClean: boolean
 }
 
-const StepThree: React.FC<initialProps> = ({ stepThree, stepEndThree, backStep, addDataStepThree }) => {
+const StepThree: React.FC<initialProps> = ({ stepThree, stepEndThree, backStep, addDataStepThree, isClean }) => {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-		// reset,
+		reset,
 	} = useForm<StepThreeTypes>()
 
 	const onSubmit: SubmitHandler<StepThreeTypes> = ({ phone, city }) => {
 		stepEndThree()
 		addDataStepThree(phone, city)
-		// reset()
+		if (isClean) {
+			reset()
+		}
 	}
 
 	const validationForm = {

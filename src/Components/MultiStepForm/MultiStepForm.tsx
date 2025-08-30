@@ -16,6 +16,7 @@ const MultiStepForm = () => {
 		handleDataStepTwo,
 		handleDataStepThree,
 		handleCleanAll,
+		cleanAllState,
 	} = useContext(MultiStepContext)
 
 	return (
@@ -32,18 +33,25 @@ const MultiStepForm = () => {
 				</h2>
 			</div>
 			<div className={styles.box_steps}>
-				<StepOne stepOne={step} stepEndOne={handleNextStep} addDataStepOne={handleDataStepOne} />
+				<StepOne
+					stepOne={step}
+					stepEndOne={handleNextStep}
+					addDataStepOne={handleDataStepOne}
+					isClean={cleanAllState}
+				/>
 				<StepTwo
 					stepTwo={step}
 					stepEndTwo={handleNextStep}
 					addDateStepTwo={handleDataStepTwo}
 					backStep={handleBackStep}
+					isClean={cleanAllState}
 				/>
 				<StepThree
 					stepThree={step}
 					stepEndThree={handleNextStep}
 					addDataStepThree={handleDataStepThree}
 					backStep={handleBackStep}
+					isClean={cleanAllState}
 				/>
 				<StepResult StepResult={step} result={result} backStep={handleBackStep} cleanAll={handleCleanAll} />
 			</div>

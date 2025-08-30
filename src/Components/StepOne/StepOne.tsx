@@ -7,20 +7,23 @@ interface initialProps {
 	stepOne: number
 	stepEndOne: () => void
 	addDataStepOne: (firstName: string, lastName: string) => void
+	isClean: boolean
 }
 
-const StepOne: React.FC<initialProps> = ({ stepOne, stepEndOne, addDataStepOne }) => {
+const StepOne: React.FC<initialProps> = ({ stepOne, stepEndOne, addDataStepOne, isClean }) => {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-		// reset,
+		reset,
 	} = useForm<StepOneTypes>()
 
 	const onSubmit: SubmitHandler<StepOneTypes> = ({ firstName, lastName }) => {
 		stepEndOne()
 		addDataStepOne(firstName, lastName)
-		// reset()
+		if (isClean) {
+			reset()
+		}
 	}
 
 	const validationForm = {
