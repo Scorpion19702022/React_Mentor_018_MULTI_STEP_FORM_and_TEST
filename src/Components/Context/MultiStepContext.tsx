@@ -82,10 +82,6 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 		})
 	}
 
-	console.log(result)
-
-	// console.log(step)
-
 	return (
 		<MultiStepContext.Provider
 			value={{
