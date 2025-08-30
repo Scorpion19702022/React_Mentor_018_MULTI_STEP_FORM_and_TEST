@@ -7,8 +7,16 @@ import styles from './MultiStepForm.module.css'
 import MultiStepContext from '../Context/MultiStepContext'
 
 const MultiStepForm = () => {
-	const { step, result, handleNextStep, handleBackStep, handleDataStepOne, handleDataStepTwo, handleDataStepThree } =
-		useContext(MultiStepContext)
+	const {
+		step,
+		result,
+		handleNextStep,
+		handleBackStep,
+		handleDataStepOne,
+		handleDataStepTwo,
+		handleDataStepThree,
+		handleCleanAll,
+	} = useContext(MultiStepContext)
 
 	return (
 		<main className={styles.wrapper}>
@@ -37,7 +45,7 @@ const MultiStepForm = () => {
 					addDataStepThree={handleDataStepThree}
 					backStep={handleBackStep}
 				/>
-				<StepResult StepResult={step} result={result} backStep={handleBackStep} />
+				<StepResult StepResult={step} result={result} backStep={handleBackStep} cleanAll={handleCleanAll} />
 			</div>
 		</main>
 	)
