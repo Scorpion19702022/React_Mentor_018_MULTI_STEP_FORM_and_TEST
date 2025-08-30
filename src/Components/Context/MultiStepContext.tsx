@@ -73,6 +73,8 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 		setStep(1)
 	}
 
+	console.log(result)
+
 	// console.log(step)
 
 	return (
