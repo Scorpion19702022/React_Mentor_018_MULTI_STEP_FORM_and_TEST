@@ -1,4 +1,4 @@
 export type StepThreeTypes = {
-	phone: number
+	phone: string
 	city: string
 }

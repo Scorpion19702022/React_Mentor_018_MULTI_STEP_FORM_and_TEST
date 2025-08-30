@@ -7,7 +7,7 @@ interface initialProps {
 	stepThree: number
 	stepEndThree: () => void
 	backStep: () => void
-	addDataStepThree: (phone: number, city: string) => void
+	addDataStepThree: (phone: string, city: string) => void
 	isClean: boolean
 }
 

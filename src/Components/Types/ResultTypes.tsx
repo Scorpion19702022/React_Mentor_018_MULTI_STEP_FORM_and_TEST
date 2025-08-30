@@ -3,6 +3,6 @@ export type ResultTypes = {
 	lastNameResult?: string
 	ageResult?: string
 	genderResult?: string
-	phoneResult?: number
+	phoneResult?: string
 	cityResult?: string
 }
