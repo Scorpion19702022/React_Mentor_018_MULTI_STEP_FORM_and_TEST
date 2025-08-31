@@ -31,7 +31,7 @@ const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDat
 	const onSubmit: SubmitHandler<StepTwoTypes> = ({ age, gender }) => {
 		stepEndTwo()
 		addDateStepTwo(age, gender)
-		if (isClean) {
+		if (!isClean) {
 			reset()
 		}
 	}
