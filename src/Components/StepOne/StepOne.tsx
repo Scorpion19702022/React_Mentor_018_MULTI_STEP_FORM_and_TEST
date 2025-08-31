@@ -21,7 +21,7 @@ const StepOne: React.FC<initialProps> = ({ stepOne, stepEndOne, addDataStepOne, 
 	const onSubmit: SubmitHandler<StepOneTypes> = ({ firstName, lastName }) => {
 		stepEndOne()
 		addDataStepOne(firstName, lastName)
-		if (!isClean) {
+		if (isClean) {
 			reset()
 		}
 	}
