@@ -36,7 +36,6 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 	const [cleanAllState, setCleanAllState] = useState<boolean>(false)
 
 	const handleNextStep = () => {
-		setCleanAllState(false)
 		setStep(prevState => ++prevState)
 	}
 
@@ -68,7 +67,7 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 	}
 
 	const handleBackStep = () => {
-		setCleanAllState(false)
+		// setCleanAllState(false)
 		setStep(prevState => --prevState)
 	}
 
