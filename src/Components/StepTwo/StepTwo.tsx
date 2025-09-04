@@ -2,6 +2,7 @@ import { useForm, type SubmitHandler } from 'react-hook-form'
 import type { StepTwoTypes } from './Interfaces/StepTwoTypes'
 import styles from './StepTwo.module.css'
 import { useEffect } from 'react'
+import type { ResultTypes } from '../Types/ResultTypes'
 
 interface initialProps {
 	stepTwo: number
@@ -9,9 +10,10 @@ interface initialProps {
 	backStep: () => void
 	addDateStepTwo: (age: string, gender: string) => void
 	isClean: boolean
+	result: ResultTypes
 }
 
-const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDateStepTwo, isClean }) => {
+const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDateStepTwo, isClean, result }) => {
 	const genderKind = ['wybierz płeć', 'kobieta', 'mężczyzna']
 
 	const optionSelect = genderKind.map((item, id) => (
@@ -26,18 +28,23 @@ const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDat
 		formState: { errors },
 		reset,
 		clearErrors,
-	} = useForm<StepTwoTypes>()
+	} = useForm<StepTwoTypes>({
+		defaultValues: {
+			age: result.ageResult || '',
+			gender: result.genderResult || '',
+		},
+	})
 
 	const onSubmit: SubmitHandler<StepTwoTypes> = ({ age, gender }) => {
 		stepEndTwo()
 		addDateStepTwo(age, gender)
 	}
 
-	useEffect(() => {
-		if (isClean) {
-			reset()
-		}
-	}, [isClean, reset])
+	// useEffect(() => {
+	// 	if (isClean) {
+	// 		reset()
+	// 	}
+	// }, [isClean, reset])
 
 	useEffect(() => {
 		if (stepTwo !== 2) {

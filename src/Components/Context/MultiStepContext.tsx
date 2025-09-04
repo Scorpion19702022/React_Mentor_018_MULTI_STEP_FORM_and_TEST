@@ -82,6 +82,8 @@ export const MultiStepProvider = ({ children }: MultiStepProviderType) => {
 			phoneResult: '',
 			cityResult: '',
 		})
+
+		console.log('test')
 	}
 
 	return (

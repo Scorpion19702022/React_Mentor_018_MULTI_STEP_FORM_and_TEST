@@ -3,6 +3,7 @@ import { useForm, type SubmitHandler } from 'react-hook-form'
 import styles from './StepThree.module.css'
 import type { StepThreeTypes } from './Interfaces/StepThreeTypes'
 import { useEffect } from 'react'
+import type { ResultTypes } from '../Types/ResultTypes'
 
 interface initialProps {
 	stepThree: number
@@ -10,27 +11,40 @@ interface initialProps {
 	backStep: () => void
 	addDataStepThree: (phone: string, city: string) => void
 	isClean: boolean
+	result: ResultTypes
 }
 
-const StepThree: React.FC<initialProps> = ({ stepThree, stepEndThree, backStep, addDataStepThree, isClean }) => {
+const StepThree: React.FC<initialProps> = ({
+	stepThree,
+	stepEndThree,
+	backStep,
+	addDataStepThree,
+	isClean,
+	result,
+}) => {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 		reset,
 		clearErrors,
-	} = useForm<StepThreeTypes>()
+	} = useForm<StepThreeTypes>({
+		defaultValues: {
+			phone: result.phoneResult || '',
+			city: result.cityResult || '',
+		},
+	})
 
 	const onSubmit: SubmitHandler<StepThreeTypes> = ({ phone, city }) => {
 		stepEndThree()
 		addDataStepThree(phone, city)
 	}
 
-	useEffect(() => {
-		if (isClean) {
-			reset()
-		}
-	}, [isClean, reset])
+	// useEffect(() => {
+	// 	if (isClean) {
+	// 		reset()
+	// 	}
+	// }, [isClean, reset])
 
 	useEffect(() => {
 		if (stepThree !== 3) {

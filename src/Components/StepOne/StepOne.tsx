@@ -3,32 +3,41 @@ import type { StepOneTypes } from './Interfaces/StepOneTypes'
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import styles from './StepOne.module.css'
 import { useEffect } from 'react'
+import type { ResultTypes } from '../Types/ResultTypes'
 
 interface initialProps {
 	stepOne: number
 	stepEndOne: () => void
 	addDataStepOne: (firstName: string, lastName: string) => void
 	isClean: boolean
+	result: ResultTypes
 }
 
-const StepOne: React.FC<initialProps> = ({ stepOne, stepEndOne, addDataStepOne, isClean }) => {
+const StepOne: React.FC<initialProps> = ({ stepOne, stepEndOne, addDataStepOne, isClean, result }) => {
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 		reset,
-	} = useForm<StepOneTypes>()
+	} = useForm<StepOneTypes>({
+		defaultValues: {
+			firstName: result.firstNameResult || '',
+			lastName: result.lastNameResult || '',
+		},
+	})
 
 	const onSubmit: SubmitHandler<StepOneTypes> = ({ firstName, lastName }) => {
 		stepEndOne()
 		addDataStepOne(firstName, lastName)
 	}
 
-	useEffect(() => {
-		if (!isClean) {
-			reset()
-		}
-	}, [isClean, reset])
+	// useEffect(() => {
+	// 	if (isClean) {
+	// 		reset()
+	// 	}
+	// }, [isClean, reset])
+
+	console.log(result)
 
 	const validationForm = {
 		firstName: {

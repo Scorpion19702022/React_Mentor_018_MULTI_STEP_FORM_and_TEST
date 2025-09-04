@@ -38,6 +38,7 @@ const MultiStepForm = () => {
 					stepEndOne={handleNextStep}
 					addDataStepOne={handleDataStepOne}
 					isClean={cleanAllState}
+					result={result}
 				/>
 				<StepTwo
 					stepTwo={step}
@@ -45,6 +46,7 @@ const MultiStepForm = () => {
 					addDateStepTwo={handleDataStepTwo}
 					backStep={handleBackStep}
 					isClean={cleanAllState}
+					result={result}
 				/>
 				<StepThree
 					stepThree={step}
@@ -52,6 +54,7 @@ const MultiStepForm = () => {
 					addDataStepThree={handleDataStepThree}
 					backStep={handleBackStep}
 					isClean={cleanAllState}
+					result={result}
 				/>
 				<StepResult StepResult={step} result={result} backStep={handleBackStep} cleanAll={handleCleanAll} />
 			</div>
