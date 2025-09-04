@@ -37,7 +37,7 @@ const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDat
 		if (!isClean) {
 			reset()
 		}
-	}, [isClean])
+	}, [isClean, reset])
 
 	useEffect(() => {
 		if (stepTwo !== 2) {

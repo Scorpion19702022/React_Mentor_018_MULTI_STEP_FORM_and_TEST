@@ -30,7 +30,7 @@ const StepThree: React.FC<initialProps> = ({ stepThree, stepEndThree, backStep, 
 		if (!isClean) {
 			reset()
 		}
-	}, [isClean])
+	}, [isClean, reset])
 
 	useEffect(() => {
 		if (stepThree !== 3) {

@@ -28,7 +28,7 @@ const StepOne: React.FC<initialProps> = ({ stepOne, stepEndOne, addDataStepOne, 
 		if (!isClean) {
 			reset()
 		}
-	}, [isClean])
+	}, [isClean, reset])
 
 	const validationForm = {
 		firstName: {
