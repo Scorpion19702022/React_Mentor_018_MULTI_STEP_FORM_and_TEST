@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import StepOne from '../StepOne/StepOne'
 import StepResult from '../StepResult/StepResult'
 import StepThree from '../StepThree/StepThree'
@@ -21,6 +21,8 @@ const MultiStepForm = () => {
 		cleanAllState,
 	} = useContext(MultiStepContext)
 
+	const [step, setStep] = useState(1)
+
 	const methods = useForm<ResultTypes>({
 		defaultValues: {
 			firstNameResult: '',
@@ -31,6 +33,11 @@ const MultiStepForm = () => {
 			cityResult: '',
 		},
 	})
+
+	const handleOnSubmit = (data: ResultTypes) => {
+		console.log(data)
+		setStep(3)
+	}
 
 	return (
 		<main className={styles.wrapper}>
@@ -71,6 +78,21 @@ const MultiStepForm = () => {
 				/>
 				<StepResult StepResult={step} result={result} backStep={handleBackStep} cleanAll={handleCleanAll} />
 			</div>
+			<form onSubmit={methods.handleSubmit(handleOnSubmit)}>
+				{step === 1 && <StepOne nextStep={() => setStep(2)} />}
+				{step === 2 && <StepTwo nextStep={() => setStep(3)} prevStep={() => setStep(1)} />}
+				{step === 3 && <StepThree nextStep={() => setStep(4)} prevStep={() => setStep(2)} />}
+				{step === 4 && (
+					<StepResult
+						prevStep={() => setStep(3)}
+						data={methods.getValues()}
+						onClear={() => {
+							methods.reset()
+							setStep(1)
+						}}
+					/>
+				)}
+			</form>
 		</main>
 	)
 }

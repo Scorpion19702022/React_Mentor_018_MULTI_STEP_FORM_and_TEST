@@ -6,12 +6,14 @@ import { useEffect } from 'react'
 import type { ResultTypes } from '../Types/ResultTypes'
 
 interface initialProps {
-	stepThree: number
-	stepEndThree: () => void
-	backStep: () => void
-	addDataStepThree: (phone: string, city: string) => void
-	isClean: boolean
-	result: ResultTypes
+	stepThree?: number
+	stepEndThree?: () => void
+	backStep?: () => void
+	addDataStepThree?: (phone: string, city: string) => void
+	isClean?: boolean
+	result?: ResultTypes
+	nextStep: () => void
+	prevStep: () => void
 }
 
 const StepThree: React.FC<initialProps> = ({
@@ -21,6 +23,8 @@ const StepThree: React.FC<initialProps> = ({
 	addDataStepThree,
 	isClean,
 	result,
+	nextStep,
+	prevStep,
 }) => {
 	const {
 		register,
@@ -78,7 +82,7 @@ const StepThree: React.FC<initialProps> = ({
 
 	return (
 		<section className={stepThree === 3 ? styles.wrapper : styles.wrapper_end}>
-			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+			{/* <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj numer telefonu:</label>
 					<input className={styles.input} type='number' {...register('phone', validationForm.phoneNumber)} />
@@ -101,7 +105,29 @@ const StepThree: React.FC<initialProps> = ({
 						zobacz wynik
 					</button>
 				</div>
-			</form>
+			</form> */}
+			<div className={styles.box_inputs}>
+				<label className={styles.label}>podaj numer telefonu:</label>
+				<input className={styles.input} type='number' {...register('phone', validationForm.phoneNumber)} />
+				<div className={styles.box_error}>
+					{errors.phone?.message && <span className={styles.error}>{errors.phone.message}</span>}
+				</div>
+			</div>
+			<div className={styles.box_inputs}>
+				<label className={styles.label}>podaj miasto:</label>
+				<input className={styles.input} type='text' {...register('city', validationForm.cityName)} />
+				<div className={styles.box_error}>
+					{errors.city?.message && <span className={styles.error}>{errors.city.message}</span>}
+				</div>
+			</div>
+			<div className={styles.box_btns}>
+				<button className={styles.btn} onClick={prevStep}>
+					cofnij krok
+				</button>
+				<button className={styles.btn} onClick={nextStep}>
+					zobacz wynik
+				</button>
+			</div>
 		</section>
 	)
 }

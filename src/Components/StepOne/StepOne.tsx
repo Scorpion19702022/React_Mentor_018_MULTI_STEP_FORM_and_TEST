@@ -11,9 +11,10 @@ interface initialProps {
 	addDataStepOne: (firstName: string, lastName: string) => void
 	isClean: boolean
 	result: ResultTypes
+	nextStep: () => void
 }
 
-const StepOne: React.FC<initialProps> = ({ stepOne, stepEndOne, addDataStepOne, isClean, result }) => {
+const StepOne: React.FC<initialProps> = ({ stepOne, stepEndOne, addDataStepOne, isClean, result, nextStep }) => {
 	const {
 		register,
 		handleSubmit,
@@ -67,7 +68,7 @@ const StepOne: React.FC<initialProps> = ({ stepOne, stepEndOne, addDataStepOne, 
 
 	return (
 		<section className={stepOne === 1 ? styles.wrapper : styles.wrapper_end}>
-			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+			{/* <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj imię:</label>
 					<input className={styles.input} type='text' {...register('firstName', validationForm.firstName)} />
@@ -87,7 +88,26 @@ const StepOne: React.FC<initialProps> = ({ stepOne, stepEndOne, addDataStepOne, 
 						przejdź dalej
 					</button>
 				</div>
-			</form>
+			</form> */}
+			<div className={styles.box_inputs}>
+				<label className={styles.label}>podaj imię:</label>
+				<input className={styles.input} type='text' {...register('firstName', validationForm.firstName)} />
+				<div className={styles.box_error}>
+					{errors.firstName?.message && <span className={styles.error}>{errors.firstName.message}</span>}
+				</div>
+			</div>
+			<div className={styles.box_inputs}>
+				<label className={styles.label}>podaj azwisko:</label>
+				<input className={styles.input} type='text' {...register('lastName', validationForm.lastName)} />
+				<div className={styles.box_error}>
+					{errors.lastName?.message && <span className={styles.error}>{errors.lastName.message}</span>}
+				</div>
+			</div>
+			<div className={styles.box_btns}>
+				<button className={styles.btn} onClick={nextStep}>
+					przejdź dalej
+				</button>
+			</div>
 		</section>
 	)
 }

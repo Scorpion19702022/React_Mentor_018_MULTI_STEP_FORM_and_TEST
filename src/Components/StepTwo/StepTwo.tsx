@@ -5,15 +5,26 @@ import { useEffect } from 'react'
 import type { ResultTypes } from '../Types/ResultTypes'
 
 interface initialProps {
-	stepTwo: number
-	stepEndTwo: () => void
-	backStep: () => void
-	addDateStepTwo: (age: string, gender: string) => void
-	isClean: boolean
-	result: ResultTypes
+	stepTwo?: number
+	stepEndTwo?: () => void
+	backStep?: () => void
+	addDateStepTwo?: (age: string, gender: string) => void
+	isClean?: boolean
+	result?: ResultTypes
+	nextStep: () => void
+	prevStep: () => void
 }
 
-const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDateStepTwo, isClean, result }) => {
+const StepTwo: React.FC<initialProps> = ({
+	stepTwo,
+	stepEndTwo,
+	backStep,
+	addDateStepTwo,
+	isClean,
+	result,
+	nextStep,
+	prevStep,
+}) => {
 	const genderKind = ['wybierz płeć', 'kobieta', 'mężczyzna']
 
 	const optionSelect = genderKind.map((item, id) => (
@@ -81,7 +92,7 @@ const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDat
 
 	return (
 		<section className={stepTwo === 2 ? styles.wrapper : styles.wrapper_end}>
-			<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+			{/* <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.box_inputs}>
 					<label className={styles.label}>podaj wiek:</label>
 					<input className={styles.input} type='number' {...register('age', validationForm.age)} />
@@ -106,7 +117,31 @@ const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDat
 						przejdź dalej
 					</button>
 				</div>
-			</form>
+			</form> */}
+			<div className={styles.box_inputs}>
+				<label className={styles.label}>podaj wiek:</label>
+				<input className={styles.input} type='number' {...register('age', validationForm.age)} />
+				<div className={styles.box_error}>
+					{errors.age?.message && <span className={styles.error}>{errors.age.message}</span>}
+				</div>
+			</div>
+			<div className={styles.box_select}>
+				<label className={styles.label}>podaj płeć:</label>
+				<select className={styles.select} {...register('gender', validationForm.gender)}>
+					{optionSelect}
+				</select>
+				<div className={styles.box_error}>
+					{errors.gender?.message && <span className={styles.error}>{errors.gender.message}</span>}
+				</div>
+			</div>
+			<div className={styles.box_btns}>
+				<button className={styles.btn} onClick={prevStep}>
+					cofnij krok
+				</button>
+				<button className={styles.btn} onClick={nextStep}>
+					przejdź dalej
+				</button>
+			</div>
 		</section>
 	)
 }
