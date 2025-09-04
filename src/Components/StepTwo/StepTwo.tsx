@@ -41,10 +41,21 @@ const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDat
 	}
 
 	// useEffect(() => {
-	// 	if (isClean) {
+	// 	if (!isClean) {
 	// 		reset()
 	// 	}
 	// }, [isClean, reset])
+
+	useEffect(() => {
+		if (isClean) {
+			reset({ age: '', gender: 'wybierz płeć' })
+		} else {
+			reset({
+				age: result.ageResult || '',
+				gender: result.genderResult || 'wybierz płeć',
+			})
+		}
+	}, [isClean, result, reset])
 
 	useEffect(() => {
 		if (stepTwo !== 2) {

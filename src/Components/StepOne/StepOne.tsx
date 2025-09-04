@@ -37,7 +37,16 @@ const StepOne: React.FC<initialProps> = ({ stepOne, stepEndOne, addDataStepOne, 
 	// 	}
 	// }, [isClean, reset])
 
-	console.log(result)
+	useEffect(() => {
+		if (isClean) {
+			reset({ firstName: '', lastName: '' })
+		} else {
+			reset({
+				firstName: result.firstNameResult || '',
+				lastName: result.lastNameResult || '',
+			})
+		}
+	}, [isClean, result, reset])
 
 	const validationForm = {
 		firstName: {

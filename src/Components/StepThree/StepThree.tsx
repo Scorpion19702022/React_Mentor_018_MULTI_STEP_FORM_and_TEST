@@ -41,10 +41,21 @@ const StepThree: React.FC<initialProps> = ({
 	}
 
 	// useEffect(() => {
-	// 	if (isClean) {
+	// 	if (!isClean) {
 	// 		reset()
 	// 	}
 	// }, [isClean, reset])
+
+	useEffect(() => {
+		if (isClean) {
+			reset({ phone: '', city: '' })
+		} else {
+			reset({
+				phone: result.phoneResult || '',
+				city: result.cityResult || '',
+			})
+		}
+	}, [isClean, result, reset])
 
 	useEffect(() => {
 		if (stepThree !== 3) {

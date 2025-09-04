@@ -5,6 +5,8 @@ import StepThree from '../StepThree/StepThree'
 import StepTwo from '../StepTwo/StepTwo'
 import styles from './MultiStepForm.module.css'
 import MultiStepContext from '../Context/MultiStepContext'
+import { useForm } from 'react-hook-form'
+import type { ResultTypes } from '../Types/ResultTypes'
 
 const MultiStepForm = () => {
 	const {
@@ -18,6 +20,17 @@ const MultiStepForm = () => {
 		handleCleanAll,
 		cleanAllState,
 	} = useContext(MultiStepContext)
+
+	const methods = useForm<ResultTypes>({
+		defaultValues: {
+			firstNameResult: '',
+			lastNameResult: '',
+			ageResult: '',
+			genderResult: '',
+			phoneResult: '',
+			cityResult: '',
+		},
+	})
 
 	return (
 		<main className={styles.wrapper}>
