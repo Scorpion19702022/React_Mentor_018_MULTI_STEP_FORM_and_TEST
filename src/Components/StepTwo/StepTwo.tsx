@@ -1,7 +1,7 @@
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import type { StepTwoTypes } from './Interfaces/StepTwoTypes'
 import styles from './StepTwo.module.css'
-// import { useEffect } from 'react'
+import { useEffect } from 'react'
 
 interface initialProps {
 	stepTwo: number
@@ -25,7 +25,7 @@ const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDat
 		handleSubmit,
 		formState: { errors },
 		reset,
-		// clearErrors,
+		clearErrors,
 	} = useForm<StepTwoTypes>()
 
 	const onSubmit: SubmitHandler<StepTwoTypes> = ({ age, gender }) => {
@@ -36,11 +36,11 @@ const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDat
 		}
 	}
 
-	// useEffect(() => {
-	// 	if (stepTwo !== 2) {
-	// 		clearErrors()
-	// 	}
-	// }, [stepTwo, clearErrors])
+	useEffect(() => {
+		if (stepTwo !== 2) {
+			clearErrors()
+		}
+	}, [stepTwo, clearErrors])
 
 	const validationForm = {
 		age: {
