@@ -31,10 +31,13 @@ const StepTwo: React.FC<initialProps> = ({ stepTwo, stepEndTwo, backStep, addDat
 	const onSubmit: SubmitHandler<StepTwoTypes> = ({ age, gender }) => {
 		stepEndTwo()
 		addDateStepTwo(age, gender)
+	}
+
+	useEffect(() => {
 		if (!isClean) {
 			reset()
 		}
-	}
+	}, [isClean])
 
 	useEffect(() => {
 		if (stepTwo !== 2) {

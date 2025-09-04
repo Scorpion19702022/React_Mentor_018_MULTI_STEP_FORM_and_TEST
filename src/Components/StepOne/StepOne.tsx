@@ -2,6 +2,7 @@ import type { StepOneTypes } from './Interfaces/StepOneTypes'
 
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import styles from './StepOne.module.css'
+import { useEffect } from 'react'
 
 interface initialProps {
 	stepOne: number
@@ -21,10 +22,13 @@ const StepOne: React.FC<initialProps> = ({ stepOne, stepEndOne, addDataStepOne, 
 	const onSubmit: SubmitHandler<StepOneTypes> = ({ firstName, lastName }) => {
 		stepEndOne()
 		addDataStepOne(firstName, lastName)
-		if (isClean) {
+	}
+
+	useEffect(() => {
+		if (!isClean) {
 			reset()
 		}
-	}
+	}, [isClean])
 
 	const validationForm = {
 		firstName: {
