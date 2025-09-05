@@ -52,7 +52,7 @@ const MultiStepForm = () => {
 					{`krok trzeci`.toLocaleUpperCase()}
 				</h2>
 			</div>
-			<div className={styles.box_steps}>
+			{/* <div className={styles.box_steps}>
 				<StepOne
 					stepOne={step}
 					stepEndOne={handleNextStep}
@@ -77,7 +77,7 @@ const MultiStepForm = () => {
 					result={result}
 				/>
 				<StepResult StepResult={step} result={result} backStep={handleBackStep} cleanAll={handleCleanAll} />
-			</div>
+			</div> */}
 			<form onSubmit={methods.handleSubmit(handleOnSubmit)}>
 				{step === 1 && <StepOne nextStep={() => setStep(2)} />}
 				{step === 2 && <StepTwo nextStep={() => setStep(3)} prevStep={() => setStep(1)} />}
