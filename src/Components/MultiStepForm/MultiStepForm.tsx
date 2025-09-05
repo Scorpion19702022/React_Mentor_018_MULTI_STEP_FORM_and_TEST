@@ -21,7 +21,7 @@ const MultiStepForm = () => {
 		cleanAllState,
 	} = useContext(MultiStepContext)
 
-	const [step, setStep] = useState(1)
+	const [useStep, setUseStep] = useState(1)
 
 	const methods = useForm<ResultTypes>({
 		defaultValues: {
@@ -36,7 +36,7 @@ const MultiStepForm = () => {
 
 	const handleOnSubmit = (data: ResultTypes) => {
 		console.log(data)
-		setStep(3)
+		setUseStep(3)
 	}
 
 	return (
@@ -79,16 +79,16 @@ const MultiStepForm = () => {
 				<StepResult StepResult={step} result={result} backStep={handleBackStep} cleanAll={handleCleanAll} />
 			</div> */}
 			<form onSubmit={methods.handleSubmit(handleOnSubmit)}>
-				{step === 1 && <StepOne nextStep={() => setStep(2)} />}
-				{step === 2 && <StepTwo nextStep={() => setStep(3)} prevStep={() => setStep(1)} />}
-				{step === 3 && <StepThree nextStep={() => setStep(4)} prevStep={() => setStep(2)} />}
+				{step === 1 && <StepOne nextStep={() => setUseStep(2)} />}
+				{step === 2 && <StepTwo nextStep={() => setUseStep(3)} prevStep={() => setUseStep(1)} />}
+				{step === 3 && <StepThree nextStep={() => setUseStep(4)} prevStep={() => setUseStep(2)} />}
 				{step === 4 && (
 					<StepResult
-						prevStep={() => setStep(3)}
+						prevStep={() => setUseStep(3)}
 						data={methods.getValues()}
 						onClear={() => {
 							methods.reset()
-							setStep(1)
+							setUseStep(1)
 						}}
 					/>
 				)}
